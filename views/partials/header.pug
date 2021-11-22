@@ -1,0 +1,24 @@
+header.header
+    .header__column
+        a(href=routes.home)
+            i.fab.fa-youtube
+    .header__column 
+        form(action=routes.search , method="get")
+            input(type="text", placeholder="search by term..." , name="term") 
+    .header__column
+        ul 
+            if !user.isAuthenticated
+                li 
+                    a(href=routes.join) Join Youtube 
+                li 
+                    a(href=routes.login) LogIN 
+            else 
+                li 
+                    a(href=`videos${routes.upload}`) Upload
+
+                li 
+                    a(href=routes.userDetail(user.id)) Profile 
+                li 
+                    a(href=routes.logout) Logout    
+//- 2nd div.header__column is again a div tag with the same class name. We dont apply closing tags in pug
+

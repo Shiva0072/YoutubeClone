@@ -1,2 +1,51 @@
+npm install nodemon -D             //This is a developer dependency and not project dependency
+npm install @babel/node  
+npm install @babel/core    
+npm install @babel/preset-env      //presets can be understood as many levels. env is the latest and most supported.
+create .babelrc file and paste this: {"presets": ["@babel/preset-env"]}          //this will convert ES6 jS to vanillaJS and send the code to nodejs
+
 After creating the express server...
+
 Gitignore: we can add many things here, search "gitignore nodejs" and paste the RAW code here.
+
+Routes:
+    Order of arguments (req,res). We can offcourse have it as (req,res,next) if we want to use it as a MW.
+
+MiddleWares: 
+    next keyword is impt so that controller can move ahead. Order of arguments (req,res,next).
+    Order of placement of MW matters. Must be placed before its routing.
+    Executes b/w 2 routes.
+    Can have as many middlewares as we want. 
+    Global MW: app.use(MW). All routes will reach it and then proceed. 
+Install Cookie-Parser, Body-Parser, Helmet and Morgan. 
+Cookie parser is for managing session of user. 
+Body parser is for extracting information comming from the user thorugh maybe forms for example.  
+    Body parser can be used to get information into text or json format and hence we need to set infor for it.
+    some of the ways are urlencoded, json,etc.
+    If we dont have bodyparsers as our MW then req.body is undefined. Hence information is not sent to the backend.
+Helmet for security perposes and Morgan for logging. 
+Both are MWs. Morgan has many modes as tiny, combined, dev[we would be using],etc..
+The order of use for proper authentication=> cookie-parser=>body-parser=>helmet=>morgan
+
+Dealing with the routes.
+Build a file which contains all the routes names and then make an object route and use it further.
+
+Building the Controllers
+Build the controllers required. 
+
+Connect the routers and Controllers. 
+
+CheckPoint: See if you could go to all the routes. 
+
+======================================================================================================================
+
+Install Pug and set the view engine of the expressjs, which was bydefault undefined. try to render the home template.
+
+#{} for adding JS
+res object can be used in many ways. res.send("Info printed on window"). res.render("templateFile",{key:value}).
+
+add details in the webpages
+To associate the <label> with an <input> element, you need to give the <input> an id attribute. The <label> then needs a for attribute whose value is the same as the input's id.
+
+Mixins: we use it when we want to include a component in several pages. We use functions in mixins to achive our desired result.
+

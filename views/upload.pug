@@ -1,0 +1,10 @@
+extends layouts/main.pug
+block content
+    .form-container__uplaod
+        form(action=`${routes.upload}` method="post")
+            label(for="file" placeholder="Video File")
+            input(type="file", id="file", name="file" placeholder="Video File")
+            input(type="text" required name="title" placeholder="Title")
+            input(type="text" name="description" placeholder="Description")
+            input(type="submit", value="upload Video")
+        
